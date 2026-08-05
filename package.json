@@ -1,15 +1,15 @@
 {
   "name": "practica-1-ejercicio-en-clase",
   "version": "1.0.0",
+  "description": "Node.js Rest Apis with Express, Sequileze & PostgreSQL",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["node.js", "express", "sequelize", "rest", "api", "postgresql"],
+  "author": "The verus",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "body-parser": "^2.3.0",
     "cors": "^2.8.6",
