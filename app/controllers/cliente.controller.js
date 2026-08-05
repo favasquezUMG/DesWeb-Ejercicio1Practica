@@ -41,7 +41,7 @@ exports.findAll = (req, res) => {
         .then(data => {
             res.send(data);
         })
-        .cath(err => {
+        .catch(err => {
             res.status.send({
                 message: err.message || "Some error ocurred while retrieving clients"
             });

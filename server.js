@@ -29,7 +29,7 @@ db.sequelize.sync();
 
 //Ruta simple de prueba
 app.get("/", (req, res) => {
-    res.json({ message: "Ed Maverick es de lo mejor. Y la pagina si esta viva" });
+    res.json({ message: "Ed Maverick es de lo mejor", Ambiente: process.env.NODE_ENV || "development" });
 });
 
 //Aqui se registran todos los componentes que se desean
