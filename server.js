@@ -32,10 +32,11 @@ app.get("/", (req, res) => {
     res.json({ message: "Ed Maverick es de lo mejor", Ambiente: process.env.NODE_ENV || "development" });
 });
 
-//Aqui se registran todos los componentes que se desean
+//Aqui se registran todos los componentes que se desean (de la carpeta Routes)
 // Si agregas más recursos (ej. tutorial), regístralos igual:
 // require("./app/routes/tutorial.route")(app);
 require("./app/routes/cliente.route")(app);
+require("./app/routes/auth.route")(app);
 
 //Setear un puerto, escucha para las consultas
 const PORT = process.env.PORT || 8081;
