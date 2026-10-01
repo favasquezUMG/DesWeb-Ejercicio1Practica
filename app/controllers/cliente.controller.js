@@ -42,7 +42,7 @@ exports.findAll = (req, res) => {
             res.send(data);
         })
         .catch(err => {
-            res.status.send({
+            res.status(500).send({
                 message: err.message || "Some error ocurred while retrieving clients"
             });
         });
@@ -118,7 +118,7 @@ exports.deleteAll = (req, res) => {
     .then(nums => {
         res.send({ message: `${nums} Clients were deleted successfully!` })
     })
-    .cath(err => {
+    .catch(err => {
         res.status(500).send({
             message: err.message || "Some error ocurred while removing all clients."
         });

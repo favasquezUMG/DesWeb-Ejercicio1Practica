@@ -12,11 +12,16 @@ var corsOptions = {
     origin: "http://localhost:8081"
 };
 
-app.use(cors(corsOptions));
+//app.use(cors(corsOptions));
+app.use(cors());
+
+//Registramos el modulo de pago antes del bodyParser porque Stripe no maneja objetos tipo JSON
+app.post("/api/pago/webhook", express.raw({ type: "application/json" }),
+    require("./app/controllers/pago.controller.js").webhook
+)
 
 //Parsear las request  de tipo application/JSON
 app.use(bodyParser.json());
-
 // Parsear requests de tipo application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -37,6 +42,7 @@ app.get("/", (req, res) => {
 // require("./app/routes/tutorial.route")(app);
 require("./app/routes/cliente.route")(app);
 require("./app/routes/auth.route")(app);
+require("./app/routes/pago.route")(app);
 
 //Setear un puerto, escucha para las consultas
 const PORT = process.env.PORT || 8081;
