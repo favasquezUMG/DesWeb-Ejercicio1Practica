@@ -24,7 +24,8 @@ function FormularioContacto() {
   }
 
   return (
-    <form onSubmit={manejarEnvio}>
+    <section id="contacto" className="contacto">
+      <form onSubmit={manejarEnvio}>
       <input
         type="text"
         placeholder="Tu nombre"
@@ -40,6 +41,7 @@ function FormularioContacto() {
       <button type="submit">Enviar</button>
       <p>{mensajeEstado}</p>
     </form>
+    </section>
   );
 }
 
